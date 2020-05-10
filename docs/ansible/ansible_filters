@@ -1,0 +1,9 @@
+---
+id: ansible_filters
+title: Ansible Filters
+---
+
+## Dict Filter
+
+* dict2items
+* items2dict

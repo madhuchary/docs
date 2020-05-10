@@ -8,3 +8,8 @@ title: Ansible Connection plugins
 ```
 ansible-doc -t connection -l
 ```
+
+local
+docker
+ssh
+

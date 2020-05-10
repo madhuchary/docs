@@ -104,6 +104,29 @@ working: true # boolean
 
 ```
 
+List 
+
+```
+---
+# A list of tasty fruits
+- Apple
+- Orange
+- Strawberry
+- Mango
+```
+
+Dict
+
+```
+# An employee record
+martin:
+    name: Martin D'vloper
+    job: Developer
+    skill: Elite
+```
+
+List of Dictionary
+
 ```
 -  martin:
     name: Martin D'vloper

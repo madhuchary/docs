@@ -17,15 +17,14 @@ sudo apt install ansible -y
 ```
 Installation document for other OS click [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu)
 
-Step 2. Generate ssh keys
+Step 2. Generate ssh keys and add to nodes authorized_keys file for passwor less connection
 
 ```
 ssh-keygen -q -t rsa -N '' -f ansible_key
-
+```
 output:
 ansible_key
 ansible_key.pub
-```
 
 Step 3. Add ansible keys to agent (By default ssh reads ~/.ssh/id_rsa to override use below commands)
 
@@ -33,13 +32,17 @@ Step 3. Add ansible keys to agent (By default ssh reads ~/.ssh/id_rsa to overrid
 eval `ssh-agent`
 ssh-add ansible_key
 ```
-Step 4. ssh-copy-id - install your public key in a remote machine's authorized_keys
+Step 4. Copy the output of ansible_key.pub and append to remote ~/.ssh/authorized_keys file 
 
 ```bash
-ssh-copy-id -i ansible_key.pub user@ip
+cat ansible_key.pub 
 ```
+Check the connectivity to nodes from master, it should not ask for password
+
+
 ## Node steps
 Disable sudo password in all nodes
+
 change user with system username
 
 ```
